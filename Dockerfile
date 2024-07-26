@@ -12,7 +12,7 @@ RUN apt-get --yes -qq update \
 
 RUN git clone --recursive https://github.com/quokka-astro/quokka.git \
  && cd quokka \
- && cmake -B build -S . -DAMReX_SPACEDIM=3 \
+ && cmake -B build -S . -DCMAKE_BUILD_TYPE=RelWithDebInfo -DAMReX_SPACEDIM=3 \
  && cmake --build build --parallel 4
 
 WORKDIR /home/ubuntu

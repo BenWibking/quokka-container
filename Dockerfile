@@ -1,4 +1,4 @@
-FROM --platform=linux/x86_64 ubuntu:24.04
+FROM mcr.microsoft.com/devcontainers/cpp:ubuntu-24.04
 
 RUN apt-get --yes -qq update \
  && apt-get --yes -qq upgrade \

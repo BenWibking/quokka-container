@@ -2,7 +2,7 @@
 a Docker container for Quokka development
 
 ## Run this container
-1. Start Docker on your computer (depends on your operating system).
+1. Start Docker on your computer (see the [documentation](https://docs.docker.com/config/daemon/start/)).
 2. Download the container by running (in a terminal):
    ```
    docker pull --platform linux/x86_64 ghcr.io/benwibking/quokka-container:main

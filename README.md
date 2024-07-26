@@ -9,10 +9,10 @@ a Docker container for Quokka development
    ```
 4. Start and log into the container:
    ```
-   docker run -it --workdir /home/ubuntu --user=ubuntu ghcr.io/benwibking/quokka-container:main /bin/bash
+   docker run -it -v quokka_data:/home/ubuntu ghcr.io/benwibking/quokka-container:main /bin/bash
    ```
 6. Run a simulation using the pre-compiled Quokka binaries:
    ```
    /quokka/build/src/HydroBlast3D/test_hydro3d_blast /quokka/tests/blast_32.in
    ```
-7. Examine the output using `yt` or another analysis tool.
+7. Examine the output using `yt` or another analysis tool (e.g., VisIt or Paraview).

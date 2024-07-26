@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM --platform=linux/x86_64 ubuntu:24.04
 
 RUN apt-get --yes -qq update \
  && apt-get --yes -qq upgrade \
@@ -15,4 +15,6 @@ RUN git clone --recursive https://github.com/quokka-astro/quokka.git \
  && cmake -B build -S . -DAMReX_SPACEDIM=3 \
  && cmake --build build --parallel 4
 
+WORKDIR /home/ubuntu
+USER ubuntu
 CMD [ "/bin/bash" ]

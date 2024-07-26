@@ -17,3 +17,6 @@ a Docker container for Quokka development
    ```
 7. Examine the output in the `quokka_data` directory (*which is accessible from outside the container*) using VisIt or Paraview:
    ![paraview_screenshot](https://github.com/user-attachments/assets/692f7b5a-3654-432c-862f-76ba74579ec4)
+
+## Workaround: debugging using GDB on Apple Silicon host machines
+If you are running Docker on Apple Silicon, there is a [truly awful workaround](https://github.com/docker/for-mac/issues/6921#issuecomment-1872394991) that is required in order to use `gdb`.

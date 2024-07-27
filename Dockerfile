@@ -10,8 +10,6 @@ RUN apt-get --yes -qq update \
  && apt-get --yes -qq clean \
  && rm -rf /var/lib/apt/lists/*
 
-RUN pipx install esbonio
-
 RUN git clone --recursive https://github.com/quokka-astro/quokka.git \
  && cd quokka \
  && cmake -B build -S . -DCMAKE_BUILD_TYPE=RelWithDebInfo -DAMReX_SPACEDIM=3 \
@@ -19,4 +17,7 @@ RUN git clone --recursive https://github.com/quokka-astro/quokka.git \
 
 WORKDIR /home/ubuntu
 USER ubuntu
+
+RUN pipx install esbonio && pipx ensurepath
+
 CMD [ "/bin/bash" ]

@@ -13,7 +13,7 @@ a Docker container for Quokka development
    ```
 6. Run a simulation using the pre-compiled Quokka binaries:
    ```
-   mpirun /quokka/build_3d/src/HydroBlast3D/test_hydro3d_blast /quokka/tests/blast_32.in
+   mpirun /quokka/build_3d/src/problems/HydroBlast3D/test_hydro3d_blast /quokka/tests/blast_32.in
    ```
 7. Examine the output in the `quokka_data` directory (*which is accessible from outside the container*) using VisIt or Paraview:
    ![paraview_screenshot](https://github.com/user-attachments/assets/692f7b5a-3654-432c-862f-76ba74579ec4)

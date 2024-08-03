@@ -4,7 +4,7 @@ RUN apt-get --yes -qq update \
  && apt-get --yes -qq upgrade \
  && apt-get --yes -qq install build-essential \
                       git cmake clangd gcc g++ \
-                      python3-dev python3-numpy python3-matplotlib python3-pip pipx \
+                      python3-dev python3-numpy python3-matplotlib python3-pip \
                       libopenmpi-dev \
                       libhdf5-mpi-dev \
                       paraview \
@@ -48,8 +48,7 @@ RUN git clone --recursive https://github.com/quokka-astro/quokka.git \
 # && cmake --build build_2d --parallel 4 \
 # && cmake -B build_3d -S . -DCMAKE_BUILD_TYPE=RelWithDebInfo -DAMReX_SPACEDIM=3 \
 # && cmake --build build_3d --parallel 4
- 
+
 WORKDIR /home/ubuntu
 USER ubuntu
-RUN pipx install esbonio && pipx ensurepath
 CMD [ "/bin/bash" ]

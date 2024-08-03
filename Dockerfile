@@ -20,7 +20,7 @@ RUN git clone --recursive https://github.com/llnl/conduit.git \
  && mkdir -p /opt/conduit \
  && cmake -S src -B build -DCMAKE_BUILD_TYPE=Debug -DENABLE_MPI=ON -DCMAKE_INSTALL_PREFIX=/opt/conduit \
  && cmake --build build --parallel 4 \
- && cmake --install build
+ && cmake --install build \
  && cmake --build build --target clean
 
 # build Catalyst
@@ -29,7 +29,7 @@ RUN git clone https://gitlab.kitware.com/paraview/catalyst.git \
  && mkdir -p /opt/catalyst \
  && cmake -B build -S . -DCATALYST_WITH_EXTERNAL_CONDUIT=ON -DCMAKE_INSTALL_PREFIX=/opt/catalyst \
  && cmake --build build --parallel 4 \
- && cmake --install build
+ && cmake --install build \
  && cmake --build build --target clean
 
 # build Quokka

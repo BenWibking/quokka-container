@@ -18,11 +18,7 @@ WORKDIR /
 RUN git clone --recursive https://github.com/quokka-astro/quokka.git \
  && cd quokka \
  && cmake -B build_3d -S . -DCMAKE_BUILD_TYPE=Release -DAMReX_SPACEDIM=3 \
- && cmake --build build_3d --parallel 4 --target test_hydro3d_blast
-
-# build Quokka for CUDA
-RUN git clone --recursive https://github.com/quokka-astro/quokka.git \
- && cd quokka \
+ && cmake --build build_3d --parallel 4 --target test_hydro3d_blast \
  && cmake -B build_gpu_3d -S . -DCMAKE_BUILD_TYPE=Release -DAMReX_SPACEDIM=3 -DAMReX_GPU_BACKEND=CUDA \
  && cmake --build build_gpu_3d --parallel 4 --target test_hydro3d_blast
 
